@@ -3,6 +3,7 @@ const sueldoa = 450000;
 const sueldob = 650000;
 const sueldoc = 850000;
 const sueldod = 1250000;
+const rangos = [450000,650000,850000,1250000];
 
 let nombre = prompt("Hola, ingresa tu nombre");
 alert("Saludos "+nombre);

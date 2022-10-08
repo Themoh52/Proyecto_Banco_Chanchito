@@ -4,6 +4,7 @@ const tasab = 0.0525;
 const tasac = 0.0555;
 const tasad = 0.0575;
 const uf = 34245;
+const tasas =[0.05,0.0525,0.0555,0.0575];
 
 let nombre = prompt("Hola, ingresa tu nombre");
 alert("Saludos "+nombre);
