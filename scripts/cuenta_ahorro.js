@@ -12,10 +12,10 @@ function operaciones(operacion){
     }    
 }
 //Variables que contienen a las funciones nacidas a partir de la función de orden superior//
-let i = operaciones("Incremento");
-let ti = operaciones("TasaInteres");
+let incremento = operaciones("Incremento");
+let tasainteres = operaciones("TasaInteres");
 
-//Saludo al usuario y solicitud del sueldo (los modales hacen al programa)//
+//Saludo al usuario y función de cuenta de ahorro (los modales hacen al programa)//
 let nombre = prompt("Hola, ingresa tu nombre");
 alert("Saludos "+nombre);
 let sueldo = 0;
@@ -23,21 +23,21 @@ function ahorro(){
 do {
     sueldo = parseInt(prompt("Ingresa tu sueldo"));
     if(sueldo>=rangos[0] && sueldo<=rangos[1]){
-        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+ti(tasas[3])+"%");
-        alert("Así, si depositas su sueldo con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+i(sueldo,tasas[3])+" pesos.");
+        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas[3])+"%");
+        alert("Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas[3])+" pesos.");
     }else if(sueldo>=rangos[1] && sueldo<=rangos[2]){
-        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+ti(tasas[2])+"%");
-        alert("Así, si depositas su sueldo con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+i(sueldo,tasas[2])+" pesos.");
+        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas[2])+"%");
+        alert("Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas[2])+" pesos.");
     }else if(sueldo>=rangos[2] && sueldo<=rangos[3]){
-        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+ti(tasas[1])+"%");
-        alert("Así, si depositas su sueldo con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+i(sueldo,tasas[1])+" pesos."); 
+        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas[1])+"%");
+        alert("Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas[1])+" pesos."); 
     }else if(sueldo>=rangos[3]){
-        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+ti(tasas[0])+"%");
-        alert("Así, si depositas su sueldo con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+i(sueldo,tasas[0])+" pesos."); 
+        alert("Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas[0])+"%");
+        alert("Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas[0])+" pesos."); 
     }else{
         alert("Lo siento, pero tu sueldo no es suficiente para abrir una cuenta de ahorro con nosotros.");
     }
-    respuesta = confirm("Y esa es la opción de cuenta de ahorro que tenemos para tí. ¿Quieres realizar otra simulación?, ¿O deseas solicitar abrir una Cuenta de Ahorro con nosotros?");
+    respuesta = confirm("Esa es la opción de cuenta de ahorro que tenemos para tí. ¿Deseas realizar otra simulación?, ¿O quieres solicitar abrir una Cuenta de Ahorro con nosotros?");
 } while (respuesta !=false)
 }
 ahorro();

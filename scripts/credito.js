@@ -18,10 +18,10 @@ function operaciones(operacion){
 }    
 
 //Variables que contienen las funciones nacidas a partir de la función de orden superior//
-let ct = operaciones("CreditoTotal");
-let c = operaciones("Conversion");
-let cm = operaciones("CuotaMensual");
-let ti = operaciones("TasaInteres");
+let creditototal = operaciones("CreditoTotal");
+let conversion = operaciones("Conversion");
+let cuotamensual = operaciones("CuotaMensual");
+let tasainteres = operaciones("TasaInteres");
 
 //Saludo al usuario (Los modales hacen al programa)//
 let nombre = prompt("Hola, ingresa tu nombre");
@@ -33,21 +33,21 @@ do {
     vivienda = parseInt(prompt("Ingresa el valor de la vivienda en UF"));
     pie =parseInt(prompt("Ingresa el pie que tienes para la vivienda en UF. Recuerda que 1 Uf equivale a "+uf+" pesos"));
     if(pie>=(vivienda*0.2) && pie<=(vivienda*0.4)){
-        alert("Te ofrecemos un crédito hipotecario con una tasa de interés del "+(ti(tasas[0]))+"%,\n con un plazo de pago de"+anios[3]+" años.");
-        alert("Así, si solicitas un crédito con nosotros, este tendrá un valor total de "+ct(vivienda,tasas[0])+" Uf, equivalente a"+c(ct(vivienda,tasas[0]))+" pesos.\n El valor mensual de las cuotas a pagar son de "+cm(c(ct(vivienda,tasas[0])),anios[3])+" pesos.");
+        alert("Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[0])+"UF, equivalente a "+conversion(creditototal(vivienda,tasas[0]))+" pesos.");
+        alert("Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[3]+" años, una tasa de interes del "+tasainteres(tasas[0])+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas[0])),anios[3])+" pesos.");
     }else if(pie>=(vivienda*0.4) && pie<=(vivienda*0.6)){
-        alert("Te ofrecemos un crédito hipotecario con una tasa de interés del "+(ti(tasas[1]))+"%,\n con un plazo de pago de"+anios[2]+" años.");
-        alert("Así, si solicitas un crédito con nosotros, este tendrá un valor total de "+ct(vivienda,tasas[1])+" Uf, equivalente a"+c(ct(vivienda,tasas[1]))+" pesos.\n El valor mensual de las cuotas a pagar son de "+cm(c(ct(vivienda,tasas[1])),anios[2])+" pesos.");
+        alert("Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[1])+"UF, equivalente a "+conversion(creditototal(vivienda,tasas[1]))+" pesos.");
+        alert("Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[2]+" años, una tasa de interes del "+tasainteres(tasas[1])+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas[1])),anios[2])+" pesos.");
     }else if(pie>=(vivienda*0.6) && pie<=(vivienda*0.8)){
-        alert("Te ofrecemos un crédito hipotecario con una tasa de interés del "+(ti(tasas[2]))+"%,\n con un plazo de pago de"+anios[1]+" años.");
-        alert("Así, si solicitas un crédito con nosotros, este tendrá un valor total de "+ct(vivienda,tasas[2])+" Uf, equivalente a"+c(ct(vivienda,tasas[2]))+" pesos.\n El valor mensual de las cuotas a pagar son de "+cm(c(ct(vivienda,tasas[2])),anios[1])+" pesos."); 
+        alert("Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[2])+"UF, equivalente a "+conversion(creditototal(vivienda,tasas[2]))+" pesos.");
+        alert("Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[1]+" años, una tasa de interes del "+tasainteres(tasas[2])+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas[2])),anios[1])+" pesos.");
     }else if(pie>=(vivienda*0.8)){
-        alert("Te ofrecemos un crédito hipotecario con una tasa de interés del "+(ti(tasas[3]))+"%,\n con un plazo de pago de"+anios[0]+" años.");
-        alert("Así, si solicitas un crédito con nosotros, este tendrá un valor total de "+ct(vivienda,tasas[3])+" Uf, equivalente a"+c(ct(vivienda,tasas[3]))+" pesos.\n El valor mensual de las cuotas a pagar son de "+cm(c(ct(vivienda,tasas[3])),anios[0])+" pesos."); 
+        alert("Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[3])+"UF, equivalente a "+conversion(creditototal(vivienda,tasas[3]))+" pesos.");
+        alert("Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[0]+" años, una tasa de interes del "+tasainteres(tasas[3])+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas[3])),anios[0])+" pesos."); 
     }else{
         alert("Lo siento, pero si no tienes un pie mayor o igual al 20%, no es posible solicitar un crédito hipotecario con nosotros.");
     }
-    respuesta = confirm("Y esa es la opción de crédito hipotecario que tenemos para tí. ¿Quieres realizar otra simulación?,¿O desea solicitar la aprobación del crédito");
+    respuesta = confirm("Esa es la opción de crédito hipotecario que tenemos para tí. ¿Aceptas?, ¿O deseas realizar otra simulación?");
 } while (respuesta !=false)
 }
 credito();
