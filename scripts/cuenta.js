@@ -9,7 +9,7 @@ let usuario = prompt("Ingresa tu correo de usuario");
 let pass = prompt("Ahora ingresa tu contraseña. \nRecuerda que el sistema distingue de mayúsculas y minúsculas, números y símbolos");
 
 //Función de inicio de sesión// 
-
+function sesion(){
 if((usuario===cuenta1.correo && pass==cuenta1.constrasena) || (usuario===cuenta2.correo && pass===cuenta2.constrasena) || (usuario==basedatos[0] && pass==basedatos[1])){
     alert("¡¡Bienvenido!! , ahora puedes simular y solicitar créditos hipotecarios o simular y abrir una cuenta de ahorro con nosotros");
 }else{
@@ -22,3 +22,5 @@ if((usuario===cuenta1.correo && pass==cuenta1.constrasena) || (usuario===cuenta2
         alert("Listo, has creado una cuenta en Banco Chanchito. Ahora actualiza la página e inicia sesión.")
     }
 }
+}
+sesion();
