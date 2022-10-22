@@ -47,7 +47,7 @@ alert("Saludos "+nombre);
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(){
-    let credito = document.getElementsByClassName("Credito_main");
+    let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas.find(casoa))+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casoa)))+" pesos.";
     document.body.appendChild(respuestaSimulador1);
@@ -58,7 +58,7 @@ function respuestaSimuladora(){
 
 //Función con la respuesta del segundo escenario, mediante DOM//
 function respuestaSimuladorb(){
-    let credito = document.getElementsByClassName("Credito_main");
+    let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas.find(casob))+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casob)))+" pesos.";
     document.body.appendChild(respuestaSimulador1);
@@ -69,7 +69,7 @@ function respuestaSimuladorb(){
 
 //Función con la respuesta del tercer escenario, mediante DOM//
 function respuestaSimuladorc(){
-    let credito = document.getElementsByClassName("Credito_main");
+    let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas.find(casoc))+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casoc)))+" pesos.";
     document.body.appendChild(respuestaSimulador1);
@@ -80,7 +80,7 @@ function respuestaSimuladorc(){
 
 //Función con la respuesta del cuarto escenario, mediante DOM//
 function respuestaSimuladord(){
-    let credito = document.getElementsByClassName("Credito_main");
+    let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas.find(casod))+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casod)))+" pesos.";
     document.body.appendChild(respuestaSimulador1);
@@ -91,7 +91,7 @@ function respuestaSimuladord(){
 
 //Función con la respuesta de rechazo, mediante DOM//
 function respuestaSimuladore(){
-    let credito = document.getElementsByClassName("Credito_main");
+    let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Lo siento, pero si no tienes un pie mayor o igual al 20%, no es posible solicitar un crédito hipotecario con nosotros.";
     document.body.appendChild(respuestaSimulador1);
