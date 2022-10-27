@@ -34,76 +34,89 @@ let casoc= condiciones ("c");
 let casod= condiciones ("d");
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
-function respuestaSimuladora(){
-    let credito = document.getElementsByClassName("cuenta-ahorro_main");
-    let respuestaSimulador1 = document.createElement("p");
+function respuestaSimuladora(sueldo){
+    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
+    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
+    if(sueldo!=0){
     respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casod))+"%";
-    document.body.appendChild(respuestaSimulador1);
-    let respuestaSimulador2 = document.createElement("p");
     respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casod))+" pesos."; 
-    document.body.appendChild(respuestaSimulador2);
+    }else{
+        respuestaSimulador1.remove();
+        respuestaSimulador2.remove();
+    }
 }
 
 //Función que entrega mensajes sobre el segundo escenario de la simulación, mediante DOM//
-function respuestaSimuladorb(){
-    let credito = document.getElementsByClassName("credito_main");
-    let respuestaSimulador1 = document.createElement("p");
+function respuestaSimuladorb(sueldo){
+    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
+    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
+    if(sueldo!=0){
     respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casoc))+"%";
-    document.body.appendChild(respuestaSimulador1);
-    let respuestaSimulador2 = document.createElement("p");
     respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casoc))+" pesos."; 
-    document.body.appendChild(respuestaSimulador2);
+    }else{
+    respuestaSimulador1.remove();
+    respuestaSimulador2.remove();
+    }
 }
 
 //Función que entrega mensajes sobre el tercer escenario de la simulación, mediante DOM//
-function respuestaSimuladorc(){
-    let credito = document.getElementsByClassName("credito_main");
-    let respuestaSimulador1 = document.createElement("p");
+function respuestaSimuladorc(sueldo){
+    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
+    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
+    if(sueldo!=0){
     respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casob))+"%";
-    document.body.appendChild(respuestaSimulador1);
-    let respuestaSimulador2 = document.createElement("p");
     respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casob))+" pesos."; 
-    document.body.appendChild(respuestaSimulador2);
+    }else{
+    respuestaSimulador1.remove();
+    respuestaSimulador2.remove();
+    }
 }
 
 //Función que entrega mensajes sobre el cuarto escenario de la simulación, mediante DOM//
-function respuestaSimuladord(){
-    let credito = document.getElementsByClassName("credito_main");
-    let respuestaSimulador1 = document.createElement("p");
+function respuestaSimuladord(sueldo){
+    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
+    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
+    if(sueldo!=0){
     respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casoa))+"%";
-    document.body.appendChild(respuestaSimulador1);
-    let respuestaSimulador2 = document.createElement("p");
     respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casoa))+" pesos."; 
-    document.body.appendChild(respuestaSimulador2);
+    }else{
+        respuestaSimulador1.remove();
+        respuestaSimulador2.remove();
+    }
 }
 
 //Función que entrega mensajes sobre el escenario de rechazo de la simulación, mediante DOM//
-function respuestaSimuladore(){
+function respuestaSimuladore(sueldo){
     let credito = document.getElementsByClassName("credito_main");
     let respuestaSimulador1 = document.createElement("p");
     respuestaSimulador1.innerText = "Lo siento, pero tu sueldo no es suficiente para abrir una cuenta de ahorro con nosotros.";
-    document.body.appendChild(respuestaSimulador1);
+    credito.appendChild(respuestaSimulador1);
 }
 
-//Saludo al usuario y función de cuenta de ahorro (los modales hacen al programa)//
-let nombre = prompt("Hola, ingresa tu nombre");
-alert("Saludos "+nombre);
-let sueldo = 0;
-function ahorro(){
-do {
-    sueldo = parseInt(prompt("Ingresa tu sueldo"));
+let formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", ahorro);
+
+//Función de cuenta de ahorro//
+
+function ahorro(e){
+    e.preventDefault();
+    sueldo = parseInt(document.getElementById("sueldo").value);
     if(sueldo>=rangos[0] && sueldo<=rangos[1]){
-        respuestaSimuladora();
+        respuestaSimuladora(sueldo);
     }else if(sueldo>=rangos[1] && sueldo<=rangos[2]){
-        respuestaSimuladorb();
+        respuestaSimuladorb(sueldo);
     }else if(sueldo>=rangos[2] && sueldo<=rangos[3]){
-        respuestaSimuladorc();
+        respuestaSimuladorc(sueldo);
     }else if(sueldo>=rangos[3]){
-        respuestaSimuladord(); 
+        respuestaSimuladord(sueldo); 
     }else{
         respuestaSimuladore();
     }
-    respuesta = confirm("Esa es la opción de cuenta de ahorro que tenemos para tí. ¿Deseas realizar otra simulación?, ¿O quieres solicitar abrir una Cuenta de Ahorro con nosotros?");
-} while (respuesta !=false)
 }
-ahorro();
+
+//Función para borrar la respuesta del sitio//
+let borrarFormulario = document.getElementById("formulario");
+borrarFormulario.addEventListener("reset", borrar)
+function borrar(){
+    respuestaSimuladora(0);
+}

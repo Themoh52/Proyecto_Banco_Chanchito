@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresa Aquí</title>
+    <title>Cuenta de Ahorro</title>
 </head>
 <body>
     <header>
@@ -17,12 +17,14 @@
     </header>
     <main class="cuenta-ahorro_main">
         <h1>Simula tu Cuenta de Ahorro aquí</h1>
-        <form action="" method="get" enctype="application/x-www-form-urlencoded">
+        <form action="" method="get" enctype="application/x-www-form-urlencoded" id="formulario">
             <label for="Sueldo"> Ingresa tu Sueldo</label>
-            <input type="number" name="Sueldo" required>
+            <input type="number" name="Sueldo" required id = "sueldo">
             <input type="submit" value="Simula tu Cuenta de Ahorro" class="btn-simular">
             <input type="reset" value="Reinicia la simulación" class="btn-reinicio">
         </form>
+        <p id="respuesta-simulador1"></p>
+        <p id="respuesta-simulador2"></p>
     </main>
     <footer>
         <a href="./pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
