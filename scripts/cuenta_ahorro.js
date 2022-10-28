@@ -3,6 +3,10 @@
 const rangos = [450000,650000,850000,1250000];
 const tasas = [0.05,0.1,0.15,0.2];
 
+//Guardado de la array 'tasas' en localstorage//
+const rangosJSON = JSON.stringify(rangos);
+localStorage.setItem("escenarios",rangosJSON);
+
 //Función de orden superior, que retorna las operaciones de incremento y tasa de interés// 
 function operaciones(operacion){
     if (operacion=="Incremento"){
@@ -100,6 +104,7 @@ formulario.addEventListener("submit", ahorro);
 
 function ahorro(e){
     e.preventDefault();
+    const obtenerRangos = JSON.parse(localStorage.getItem("escenarios"));
     sueldo = parseInt(document.getElementById("sueldo").value);
     if(sueldo>=rangos[0] && sueldo<=rangos[1]){
         respuestaSimuladora(sueldo);

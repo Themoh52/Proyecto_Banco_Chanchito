@@ -1,20 +1,28 @@
-//Creador de cuentas para la página "ingresa_aqui.html"//
-//Ingreso de Cuenta//
+//Pequeña base de datos de cuentas, que incluye el nombre del usuario, correo y contraseña//
 const cuenta1 = new Cuenta ("Martín","martin.olate@gmail.com","Mati552,.","1");
-const cuenta2 = new Cuenta ("Sara","sari.oshita@gmail.com","Oshita52.","2"); 
+const cuenta2 = new Cuenta ("Sara","sari.oshita@gmail.com","Oshita52.","2");
 
+//Guardado de las cuentas en localstorage, mediante el uso de JSON//
+const cuenta1JSON = JSON.stringify(cuenta1);
+const cuenta2JSON = JSON.stringify(cuenta2);
+localStorage.setItem("cuentaMartin",cuenta1JSON);
+localStorage.setItem("cuentaSara",cuenta2JSON);
+
+//Inicio de la función de inicio de sesión, mediante events//
 let cuenta = document.getElementById("formulario");
 formulario.addEventListener("submit", sesion);
 //Función de inicio de sesión// 
 function sesion(e){
     e.preventDefault();
+    const obtencionCuenta1 = JSON.parse(localStorage.getItem("cuentaMartin"));    
+    const obtencionCuenta2 = JSON.parse(localStorage.getItem("cuentaSara"));
     let usuario = document.getElementById("correo").value;
     let pass = document.getElementById("contrasena").value;
     if((usuario===cuenta1.correo && pass==cuenta1.constrasena) || (usuario===cuenta2.correo && pass===cuenta2.constrasena)){
     respuestasesiona(usuario,pass);
-}else{
+    }else{
     respuestasesionb(usuario,pass);
-}
+    }
 }
 
 //Respuesta de inicio de sesión para el usuario//
