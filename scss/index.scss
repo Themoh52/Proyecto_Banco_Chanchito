@@ -1,0 +1,13 @@
+@import "./misc/variables";
+@import "./misc/normalize";
+@import "./components/forms";
+
+
+@import"./partials/header";
+@import "./partials/footer";
+
+@import "./pages/index";
+@import "./pages/ingresa_aqui";
+@import "./pages/credito_hipotecario";
+@import "./pages/cuenta_ahorro";
+@import "./misc/media_queries";

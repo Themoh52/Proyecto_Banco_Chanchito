@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Chanchito</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-<header>
-    <nav>
-        <img src="./images/" alt="Logotipo Banco Chanchito">
+<header class="header">
+    <nav class="header-nav">
+        <a href="./index.html"><img src="images/" alt="Logotipo Banco Chanchito"></a>
         <a href="./pages/ingresa_aqui.html">Ingresa Aquí</a>
         <a href="./pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
         <a href="./pages/credito_hipotecario.html">Crédito Hipotecario</a>
     </nav>
 </header>
-<main>
-    <h1>Banco Chanchito</h1>
-    <section>
+<main class="index-main">
+    <section class ="index-main-section__historia">
+        <h1>Banco Chanchito</h1>
         <h2>Porque cada peso importa:</h2>
-        <p>Banco chanchito nace en el año 1957, como un banco que busca maximizar los fondos de nuestros clientes. Nuestros créditos hipotecarios y cuentas de ahorro se diseñaron para no cobrar de más y proteger los fondos de nuestros afiliados.</p>
+            <p>Banco chanchito nace en el año 1957, como un banco que busca maximizar los fondos de nuestros clientes. Nuestros créditos hipotecarios y cuentas de ahorro se diseñaron para no cobrar de más y proteger los fondos de nuestros afiliados.</p>
     </section>
-    <section>
+    <section class="index-main-section__credito">
         <h2>Crédito Hipotecario</h2>
         <p>Sabemos que el sueño de una casa o departamento propio, en estos días, es difícil de realizar. Por eso, en Banco Chanchito queremos ayudarte a cumplir dicho sueño</p>
             <h3>¿Y cuáles son nuestros beneficios</h3>
@@ -33,9 +36,9 @@
         <p>¿Quieres revisar nuestras opciones de crédito?, ingresa a nuestro simlulador, pinchando el siguiente botón:</p>
         <a href="./pages/credito_hipotecario.html"> Simulador de Crédito Hipotecario</a>
     </section>
-    <section>
+    <section class="index-main-section__ahorro">
         <h2>Cuenta de Ahorro</h2>
-        <p>Siempre es bueno tener dinero guardado, nunca se sabe cuándo se va a necesitar. Es por esto que Banco Chanchito ofrece guardar tu dinero con neustras Cuenta de Ahorro únicas en el mercado</p>
+        <p>Siempre es bueno tener dinero guardado, nunca se sabe cuándo se va a necesitar. Es por esto que Banco Chanchito ofrece guardar tu dinero con nuestras Cuenta de Ahorro únicas en el mercado</p>
             <h3>¿Y cuáles son nuestros beneficios?</h3>
             <ul>
                 <li>Opciones de ahorro: Puedes elegir entre sólo guardar dinero, ó guardarlo e incrementarlo mediante nuestras tasas de interés</li>
@@ -45,11 +48,10 @@
         <a href="./pages/cuenta_ahorro.html">Simulador de Cuenta de Ahorro</a>
     </section>    
 </main>
-<footer>
-    <a href="./pages/ingreso_plataforma.html">Ingresa Aquí</a>
+<footer class="footer">
+    <a href="./pages/ingresa_aqui.html">Ingresa Aquí</a>
     <a href="./pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
     <a href="./pages/credito_hipotecario.html">Crédito Hipotecario</a>
 </footer>
-    <script src="./scripts/index.js"></script>
 </body>
 </html>

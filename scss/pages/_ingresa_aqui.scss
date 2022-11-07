@@ -1,0 +1,27 @@
+@import "../misc/mixins";
+.ingresa-aqui-main{
+    margin: 0 0 50px 0;
+    display: grid;
+    grid-template-areas:   
+    "index-main-section__about-us index-main-section__areas"
+    " index-main-section__practica index-main-section__work";
+    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 2fr);
+    gap: 20px;
+    &-section__about-us{
+        grid-area: index-main-section__about-us;
+        animation: index-section__about-us 1s ease-in-out both;
+    }
+    &-section__areas{
+        grid-area: index-main-section__areas;
+        animation: index-section__areas 2s ease-in-out both;
+    }
+    &-section__practica{
+        grid-area: index-main-section__practica;
+        animation: index-section__practica 3s ease-in-out both;
+    }
+    &-section__work{
+        grid-area: index-main-section__work;
+        animation: index-section__work 4s ease-in-out both;
+    }
+}

@@ -1,0 +1,41 @@
+$parrafo: 'Inika', serif;
+$formulario:(
+    color:#a9ff1f,
+    texto: $parrafo,
+    ttexto: 30px,
+    fondo: black,
+    borde: 1px,
+    redondeado: 5px, 
+); 
+
+$botones: (
+    enviar: #4bda34,
+    borrar: #d38327,
+    texto: $parrafo,
+    ttexto: 30px,
+);
+#form{
+    width: 50vw;
+    padding: 0;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    gap: 10px;
+    font-family: map-get($formulario, texto);
+    font-size: map-get($formulario, ttexto);
+    text-align: justify;
+    color: map-get($formulario, color);
+    background-color: map-get($formulario, fondo);
+    border: map-get($formulario, borde) black;
+    border-radius: map-get($formulario, redondeado);
+    &-btn-enviar{
+        background-color: map-get($botones, enviar);
+        font-family: map-get($botones, texto);
+        font-size: map-get($botones, ttexto);
+    }
+    &-btn-borrar{
+        background-color: map-get($botones, borrar);
+        font-family: map-get($botones, texto);
+        font-size: map-get($botones, ttexto);
+    }
+}

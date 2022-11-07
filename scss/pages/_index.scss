@@ -1,0 +1,23 @@
+@import "../misc/mixins";
+.index-main{
+    margin: 0 0 50px 0;
+    display: grid;
+    grid-template-areas:  
+    "index-main-section__historia"
+    "index-main-section__credito"
+    "index-main-section__ahorro";
+    grid-template-rows: repeat(3, 2fr);
+    gap: 20px;
+    &-section__historia{
+        grid-area: index-main-section__historia;
+        animation: index-section__historia 1s ease-in-out both;
+    }
+    &-section__credito{
+        grid-area: index-main-section__credito;
+        animation: index-section__credito 2s ease-in-out both;
+    }
+    &-section__ahorro{
+        grid-area: index-main-section__ahorro;
+        animation: index-section__ahorro 3s ease-in-out both;
+    }
+}

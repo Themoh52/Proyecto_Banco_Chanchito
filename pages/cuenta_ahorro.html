@@ -5,30 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuenta de Ahorro</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html"><img src="./images/" alt="Logotipo Banco Chanchito"></a>
+    <header class="header">
+        <nav class="header-nav">
+            <a href="../index.html"><img src="../images/" alt="Logotipo Banco Chanchito"></a>
             <a href="../pages/ingresa_aqui.html">Ingresa Aquí</a>
-            <a href="../pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
             <a href="../pages/credito_hipotecario.html">Crédito Hipotecario</a>
         </nav>
     </header>
     <main class="cuenta-ahorro_main">
         <h1>Simula tu Cuenta de Ahorro aquí</h1>
-        <form action="" method="get" enctype="application/x-www-form-urlencoded" id="formulario">
+        <form action="" method="get" enctype="application/x-www-form-urlencoded" id="form">
             <label for="Sueldo"> Ingresa tu Sueldo</label>
             <input type="number" name="Sueldo" required id = "sueldo">
             <input type="submit" value="Simula tu Cuenta de Ahorro" class="btn-simular">
             <input type="reset" value="Reinicia la simulación" class="btn-reinicio">
         </form>
-        <p id="respuesta-simulador1"></p>
-        <p id="respuesta-simulador2"></p>
     </main>
-    <footer>
-        <a href="./pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
-        <a href="./pages/credito_hipotecario.html">Crédito Hipotecario</a>
+    <footer class="footer">
     </footer>
     <script src="../scripts/cuenta_ahorro.js"></script>
 </body>

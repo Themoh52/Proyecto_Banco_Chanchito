@@ -39,65 +39,100 @@ let casod= condiciones ("d");
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(sueldo){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(sueldo!=0){
-    respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casod))+"%";
-    respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casod))+" pesos."; 
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles de la cuenta de ahorro que te ofrecemos: \nTasa de interés: ${tasainteres(tasas.find(casod))}%. \nValor incremento mensual: ${incremento(sueldo,tasas.find(casod))} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función que entrega mensajes sobre el segundo escenario de la simulación, mediante DOM//
 function respuestaSimuladorb(sueldo){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(sueldo!=0){
-    respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casoc))+"%";
-    respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casoc))+" pesos."; 
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles de la cuenta de ahorro que te ofrecemos: \nTasa de interés: ${tasainteres(tasas.find(casoc))}%. \nValor incremento mensual: ${incremento(sueldo,tasas.find(casoc))} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })
     }else{
-    respuestaSimulador1.remove();
-    respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función que entrega mensajes sobre el tercer escenario de la simulación, mediante DOM//
 function respuestaSimuladorc(sueldo){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(sueldo!=0){
-    respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casob))+"%";
-    respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casob))+" pesos."; 
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles de la cuenta de ahorro que te ofrecemos: \nTasa de interés: ${tasainteres(tasas.find(casob))}%. \nValor incremento mensual: ${incremento(sueldo,tasas.find(casob))} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        }) 
     }else{
-    respuestaSimulador1.remove();
-    respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función que entrega mensajes sobre el cuarto escenario de la simulación, mediante DOM//
 function respuestaSimuladord(sueldo){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(sueldo!=0){
-    respuestaSimulador1.innerText = "Te ofrecemos una cuenta de ahorro con una tasa de interés del "+tasainteres(tasas.find(casoa))+"%";
-    respuestaSimulador2.innerText = "Así, si abres una cuenta de ahorro con nosotros, mensualmente tus fondos tendrán un incremento equivalente a "+incremento(sueldo,tasas.find(casoa))+" pesos."; 
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles de la cuenta de ahorro que te ofrecemos: \nTasa de interés: ${tasainteres(tasas.find(casoa))}%. \nValor incremento mensual: ${incremento(sueldo,tasas.find(casoa))} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })  
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función que entrega mensajes sobre el escenario de rechazo de la simulación, mediante DOM//
 function respuestaSimuladore(sueldo){
-    let credito = document.getElementsByClassName("credito_main");
-    let respuestaSimulador1 = document.createElement("p");
-    respuestaSimulador1.innerText = "Lo siento, pero tu sueldo no es suficiente para abrir una cuenta de ahorro con nosotros.";
-    credito.appendChild(respuestaSimulador1);
+    if(sueldo!=0){
+        Swal.fire({
+            title: 'Lo siento!',
+            text: `Lo siento, pero tu sueldo no es suficiente para abrir una cuenta de ahorro con nosotros.`,
+            icon: 'warning',
+            confirmButtonText: 'Entendido',
+        })  
+    }else{
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
+    }
 }
 
-let formulario = document.getElementById("formulario");
+let formulario = document.getElementById("form");
 formulario.addEventListener("submit", ahorro);
 
 //Función de cuenta de ahorro//
@@ -117,11 +152,4 @@ function ahorro(e){
     }else{
         respuestaSimuladore();
     }
-}
-
-//Función para borrar la respuesta del sitio//
-let borrarFormulario = document.getElementById("formulario");
-borrarFormulario.addEventListener("reset", borrar)
-function borrar(){
-    respuestaSimuladora(0);
 }

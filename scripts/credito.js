@@ -36,7 +36,7 @@ function condiciones(condicion){
 }
 
 //Control de submit, mediante Event//
-let formulario = document.getElementById("formulario");
+let formulario = document.getElementById("form");
 formulario.addEventListener("submit", credito);
 
 //Función con el simulador del crédito, separado por rangos del valor del pie de la  vivienda//
@@ -65,68 +65,99 @@ let casod = condiciones ("d");
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(vivienda){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(vivienda!=0){
-        respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[0])+" UF, equivalente a "+conversion(creditototal(vivienda,tasas[0]))+" pesos.";
-        respuestaSimulador2.innerText = "Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[3]+" años, una tasa de interes del "+tasainteres(tasas[0])+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas[0])),anios[3])+" pesos.";
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoa)))} pesos. \nDuración crédito: ${anios[3]} años. \n Tasa interés: ${tasainteres(tasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoa))),anios[3])} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función con la respuesta del segundo escenario, mediante DOM//
 function respuestaSimuladorb(vivienda){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(vivienda!=0){
-        respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[1])+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casob)))+" pesos.";
-        respuestaSimulador2.innerText = "Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[2]+" años, una tasa de interes del "+tasainteres(tasas.find(casob))+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas.find(casob))),anios[2])+" pesos.";
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casob))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casob)))} pesos. \nDuración crédito: ${anios[2]} años. \n Tasa interés: ${tasainteres(tasas.find(casob))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casob))),anios[2])} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función con la respuesta del tercer escenario, mediante DOM//
 function respuestaSimuladorc(vivienda){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(vivienda!=0){
-        respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[2])+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casoc)))+" pesos.";
-        respuestaSimulador2.innerText = "Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[1]+" años, una tasa de interes del "+tasainteres(tasas.find(casoc))+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas.find(casoc))),anios[1])+" pesos."; 
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoc))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoc)))} pesos. \nDuración crédito: ${anios[1]} años. \n Tasa interés: ${tasainteres(tasas.find(casoc))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoc))),anios[1])} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        }) 
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función con la respuesta del cuarto escenario, mediante DOM//
 function respuestaSimuladord(vivienda){
-    let respuestaSimulador1 = document.getElementById("respuesta-simulador1");
-    let respuestaSimulador2 = document.getElementById("respuesta-simulador2");
     if(vivienda!=0){
-        respuestaSimulador1.innerText = "Te ofrecemos un crédito hipotecario con un valor total de "+creditototal(vivienda,tasas[3])+" UF, equivalente a "+conversion(creditototal(vivienda,tasas.find(casod)))+" pesos.";
-        respuestaSimulador2.innerText = "Así, si solicitas un crédito con nosotros, este tendrá una duración de "+anios[0]+" años, una tasa de interes del "+tasainteres(tasas.find(casod))+"%, y el valor mensual de las cuotas a pagar son de "+cuotamensual(conversion(creditototal(vivienda,tasas.find(casod))),anios[0])+" pesos.";
+        Swal.fire({
+            title: '¡Genial!',
+            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casod))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casod)))} pesos. \nDuración crédito: ${anios[0]} años. \n Tasa interés: ${tasainteres(tasas.find(casod))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casod))),anios[0])} pesos.`,
+            icon: 'success',
+            confirmButtonText: '¡Entendido!',
+        })
     }else{
-        respuestaSimulador1.remove();
-        respuestaSimulador2.remove();
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
     }
 }
 
 //Función con la respuesta de rechazo, mediante DOM//
 function respuestaSimuladore(vivienda){
-    let credito = document.getElementById("credito_main");
-    let respuestaSimulador1 = document.createElement("p");
-    respuestaSimulador1.innerText = "Lo siento, pero si no tienes un pie mayor o igual al 20%, no es posible solicitar un crédito hipotecario con nosotros.";
-    credito.appendChild(respuestaSimulador1);
+    if(vivienda!=0){
+        Swal.fire({
+            title: 'Lo siento',
+            text: `Pero si el valor de tu pie no es mayor al 20% del valor de la vivienda, no puedes 
+            contrar un crédito hipotecario con nosotros.`,
+            icon: 'warning',
+            confirmButtonText: 'Entiendo',
+        })
+    }else{
+        Swal.fire({
+            title: '¡Error!',
+            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+            icon: 'error',
+            confirmButtonText: 'Entiendo',
+        })
+    }
 }
 
-//Función para borrar la respuesta del sitio//
-let borrarFormulario = document.getElementById("formulario");
-borrarFormulario.addEventListener("reset", borrar)
-function borrar(){
-    respuestaSimuladora(0);
-}
+
 

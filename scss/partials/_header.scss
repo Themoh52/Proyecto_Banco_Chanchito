@@ -1,0 +1,41 @@
+$parrafo: 'Inika', serif;
+
+.header{
+    background-color: #2bb224;
+    margin: 0 0 50px 0;
+    width: 100vw;
+    &-nav{
+        @extend .header;
+        height: 30vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        align-items: center;
+        &__logo{
+            height: 100px;
+            width: 100px;
+            margin: 0;
+        }
+            &__a{
+                padding: 5px;
+                background-color: rgba(255, 255, 255, 0);
+            }
+    &__menu{
+        margin: 0;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        list-style: none;
+        &__a{
+            font-family: $parrafo;
+            font-size: 25px;
+            color: #f0f9ff;
+            background-color: #2bb224;
+            text-decoration: none;
+            margin: 0 0 50px 0;
+        }
+        }
+    }
+}

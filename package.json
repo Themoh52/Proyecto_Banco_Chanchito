@@ -1,0 +1,32 @@
+{
+  "name": "proyecto_banco__martin_olate",
+  "version": "1.0.0",
+  "description": "Proyecto para Coderthouse, llamado 'Banco Chanchito'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/index.scss css/index.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Themoh52/Proyecto_Banco_Chanchito.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SASS",
+    "JS",
+    "BootStrap"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Themoh52/Proyecto_Banco_Chanchito/issues"
+  },
+  "homepage": "https://github.com/Themoh52/Proyecto_Banco_Chanchito#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.3",
+    "nodemon": "^2.0.20"
+  }
+}

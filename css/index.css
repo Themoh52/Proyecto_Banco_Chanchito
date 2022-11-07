@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Inika&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+h1 {
+  width: 35vw;
+  font-family: "Inika", serif;
+  font-size: 40px;
+  margin: 0 0 50px 25px;
+  padding: 0;
+  color: #f0f9ff;
+  background-color: black;
+  border: 1px black;
+  border-radius: 5px;
+  border-style: double; }
+
+h2 {
+  width: 25vw;
+  font-family: "Inika", serif;
+  font-size: 35px;
+  margin: 0 0 50px 25px;
+  padding: 0;
+  color: #ffb133;
+  background-color: black;
+  border: 1px black;
+  border-radius: 5px;
+  border-style: double; }
+
+h3 {
+  font-family: "Inika", serif;
+  font-size: 20px;
+  margin: 0 0 50px 25px;
+  padding: 0;
+  color: #a9ff1f;
+  background-color: black;
+  border: 1px black;
+  border-radius: 5px;
+  border-style: double; }
+
+p {
+  margin: 0 0 50px 25px;
+  padding: 0;
+  font-family: "Inika", serif;
+  font-size: 30px;
+  text-align: justify;
+  color: #00ff55;
+  background-color: black;
+  border: 1px black;
+  border-radius: 5px;
+  border-style: double; }
+
+a {
+  font-family: "Inika", serif;
+  font-size: 25px;
+  color: #0fe7ff;
+  text-decoration: none;
+  margin: 0 0 25px 25px;
+  padding: 0;
+  transition: ease-in-out .5s; }
+  a:hover {
+    padding: 5px;
+    margin: 0 0 25px 0;
+    background-color: black;
+    border-radius: 5px;
+    color: white; }
+
+li {
+  margin: 0 0 25px 25px;
+  padding: 0 0 0 0;
+  font-family: "Inika", serif;
+  font-size: 30px;
+  text-align: justify;
+  list-style: none;
+  color: #00ff91; }
+
+#form {
+  width: 50vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-family: "Inika", serif;
+  font-size: 30px;
+  text-align: justify;
+  color: #a9ff1f;
+  background-color: black;
+  border: 1px black;
+  border-radius: 5px; }
+  #form-btn-enviar {
+    background-color: #4bda34;
+    font-family: "Inika", serif;
+    font-size: 30px; }
+  #form-btn-borrar {
+    background-color: #d38327;
+    font-family: "Inika", serif;
+    font-size: 30px; }
+
+.header, .header-nav {
+  background-color: #2bb224;
+  margin: 0 0 50px 0;
+  width: 100vw; }
+  .header-nav {
+    height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    align-items: center; }
+    .header-nav__logo {
+      height: 100px;
+      width: 100px;
+      margin: 0; }
+    .header-nav__a {
+      padding: 5px;
+      background-color: rgba(255, 255, 255, 0); }
+    .header-nav__menu {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      list-style: none; }
+      .header-nav__menu__a {
+        font-family: "Inika", serif;
+        font-size: 25px;
+        color: #f0f9ff;
+        background-color: #2bb224;
+        text-decoration: none;
+        margin: 0 0 50px 0; }
+
+.footer {
+  width: 100vw;
+  height: 20vh;
+  background-color: #2bb224;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around; }
+  .footer-a {
+    font-family: "Inika", serif;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    margin: 0 0 10px 0; }
+
+.index-main {
+  margin: 0 0 50px 0;
+  display: grid;
+  grid-template-areas: "index-main-section__historia" "index-main-section__credito" "index-main-section__ahorro";
+  grid-template-rows: repeat(3, 2fr);
+  gap: 20px; }
+  .index-main-section__historia {
+    grid-area: index-main-section__historia;
+    animation: index-section__historia 1s ease-in-out both; }
+  .index-main-section__credito {
+    grid-area: index-main-section__credito;
+    animation: index-section__credito 2s ease-in-out both; }
+  .index-main-section__ahorro {
+    grid-area: index-main-section__ahorro;
+    animation: index-section__ahorro 3s ease-in-out both; }
+
+.ingresa-aqui-main {
+  margin: 0 0 50px 0;
+  display: grid;
+  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 2fr);
+  gap: 20px; }
+  .ingresa-aqui-main-section__about-us {
+    grid-area: index-main-section__about-us;
+    animation: index-section__about-us 1s ease-in-out both; }
+  .ingresa-aqui-main-section__areas {
+    grid-area: index-main-section__areas;
+    animation: index-section__areas 2s ease-in-out both; }
+  .ingresa-aqui-main-section__practica {
+    grid-area: index-main-section__practica;
+    animation: index-section__practica 3s ease-in-out both; }
+  .ingresa-aqui-main-section__work {
+    grid-area: index-main-section__work;
+    animation: index-section__work 4s ease-in-out both; }
+
+.credito-hipotecario-main {
+  margin: 0 0 50px 0;
+  display: grid;
+  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 2fr);
+  gap: 20px; }
+  .credito-hipotecario-main-section__about-us {
+    grid-area: index-main-section__about-us;
+    animation: index-section__about-us 1s ease-in-out both; }
+  .credito-hipotecario-main-section__areas {
+    grid-area: index-main-section__areas;
+    animation: index-section__areas 2s ease-in-out both; }
+  .credito-hipotecario-main-section__practica {
+    grid-area: index-main-section__practica;
+    animation: index-section__practica 3s ease-in-out both; }
+  .credito-hipotecario-main-section__work {
+    grid-area: index-main-section__work;
+    animation: index-section__work 4s ease-in-out both; }
+
+.cuenta-ahorro-main {
+  margin: 0 0 50px 0;
+  display: grid;
+  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
+  grid-template-rows: repeat(2, 2fr);
+  grid-template-columns: repeat(2, 2fr);
+  gap: 20px; }
+  .cuenta-ahorro-main-section__about-us {
+    grid-area: index-main-section__about-us;
+    animation: index-section__about-us 1s ease-in-out both; }
+  .cuenta-ahorro-main-section__areas {
+    grid-area: index-main-section__areas;
+    animation: index-section__areas 2s ease-in-out both; }
+  .cuenta-ahorro-main-section__practica {
+    grid-area: index-main-section__practica;
+    animation: index-section__practica 3s ease-in-out both; }
+  .cuenta-ahorro-main-section__work {
+    grid-area: index-main-section__work;
+    animation: index-section__work 4s ease-in-out both; }
