@@ -1,6 +1,5 @@
 //Pequeña base de datos de cuentas, que incluye el nombre del usuario, correo y contraseña//
-const cuenta1 = new Cuenta ("Martín","martin.olate@gmail.com","Mati552,.","1");
-const cuenta2 = new Cuenta ("Sara","sari.oshita@gmail.com","Oshita52.","2");
+const url = './bases_datos/bd_cuenta.json';
 
 //Guardado de las cuentas en localstorage, mediante el uso de JSON//
 const cuenta1JSON = JSON.stringify(cuenta1);

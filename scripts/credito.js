@@ -1,8 +1,8 @@
 //Simulador de crédito hipotecario//
 // Array con las tasas de interés, constante del valor de la UF, en CLP; y Array con los años de duración del crédito//
 const uf = 34245;
-const tasas =[0.05,0.0525,0.0555,0.0575];
-const anios = [5,8,10,15];
+const url = './bases_datos/bd_credito.json';
+
 
 //Función con las operaciones del Valor total del crédito, la Conversión de UF a peso, y el Valor de la Cuota Mensual//
 function operar(operacion){
@@ -65,25 +65,30 @@ let casod = condiciones ("d");
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(vivienda){
-    if(vivienda!=0){
-        Swal.fire({
-            title: '¡Genial!',
-            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoa)))} pesos. \nDuración crédito: ${anios[3]} años. \n Tasa interés: ${tasainteres(tasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoa))),anios[3])} pesos.`,
-            icon: 'success',
-            confirmButtonText: '¡Entendido!',
-        })
-    }else{
-        Swal.fire({
-            title: '¡Error!',
-            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-            icon: 'error',
-            confirmButtonText: 'Entiendo',
-        })
-    }
+    fetch(url)
+    .then(respuesta => respuesta.json())
+    .then(respuesta=> 
+        {if(vivienda!=0){
+            Swal.fire({
+                title: '¡Genial!',
+                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoa)))} pesos. \nDuración crédito: ${anios[3]} años. \n Tasa interés: ${tasainteres(tasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoa))),anios[3])} pesos.`,
+                icon: 'success',
+                confirmButtonText: '¡Entendido!',
+            })
+        }else{
+            Swal.fire({
+                title: '¡Error!',
+                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+                icon: 'error',
+                confirmButtonText: 'Entiendo',
+            })
+        }
+        }
+    )
 }
-
 //Función con la respuesta del segundo escenario, mediante DOM//
 function respuestaSimuladorb(vivienda){
+    fetch(url)
     if(vivienda!=0){
         Swal.fire({
             title: '¡Genial!',
@@ -103,6 +108,7 @@ function respuestaSimuladorb(vivienda){
 
 //Función con la respuesta del tercer escenario, mediante DOM//
 function respuestaSimuladorc(vivienda){
+    fetch(url)
     if(vivienda!=0){
         Swal.fire({
             title: '¡Genial!',
@@ -122,6 +128,7 @@ function respuestaSimuladorc(vivienda){
 
 //Función con la respuesta del cuarto escenario, mediante DOM//
 function respuestaSimuladord(vivienda){
+    fetch(url)
     if(vivienda!=0){
         Swal.fire({
             title: '¡Genial!',
