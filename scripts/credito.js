@@ -1,8 +1,7 @@
 //Simulador de crédito hipotecario//
 // Array con las tasas de interés, constante del valor de la UF, en CLP; y Array con los años de duración del crédito//
 const uf = 34245;
-const url = './bases_datos/bd_credito.json';
-
+const url = '../json/credito.json';
 
 //Función con las operaciones del Valor total del crédito, la Conversión de UF a peso, y el Valor de la Cuota Mensual//
 function operar(operacion){
@@ -64,6 +63,7 @@ let casoc = condiciones ("c");
 let casod = condiciones ("d");
 
 //Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
+
 function respuestaSimuladora(vivienda){
     fetch(url)
     .then(respuesta => respuesta.json())
@@ -85,6 +85,7 @@ function respuestaSimuladora(vivienda){
         }
         }
     )
+    .catch(console.log(Error));
 }
 //Función con la respuesta del segundo escenario, mediante DOM//
 function respuestaSimuladorb(vivienda){

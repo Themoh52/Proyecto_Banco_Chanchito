@@ -1,5 +1,5 @@
 //Pequeña base de datos de cuentas, que incluye el nombre del usuario, correo y contraseña//
-const url = './bases_datos/bd_cuenta.json';
+const url = "../bases_datos/bd_cuenta.json";
 
 //Guardado de las cuentas en localstorage, mediante el uso de JSON//
 const cuenta1JSON = JSON.stringify(cuenta1);
