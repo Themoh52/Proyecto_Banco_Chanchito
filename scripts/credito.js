@@ -67,8 +67,9 @@ let casod = condiciones ("d");
 function respuestaSimuladora(vivienda){
     fetch(url)
     .then(respuesta => respuesta.json())
-    .then(respuesta=> 
-        {if(vivienda!=0){
+    .then(data=> console.log(data))
+    .catch(console.log(Error));
+        if(vivienda!=0){
             Swal.fire({
                 title: '¡Genial!',
                 text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoa)))} pesos. \nDuración crédito: ${anios[3]} años. \n Tasa interés: ${tasainteres(tasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoa))),anios[3])} pesos.`,
@@ -84,9 +85,6 @@ function respuestaSimuladora(vivienda){
             })
         }
         }
-    )
-    .catch(console.log(Error));
-}
 //Función con la respuesta del segundo escenario, mediante DOM//
 function respuestaSimuladorb(vivienda){
     fetch(url)
