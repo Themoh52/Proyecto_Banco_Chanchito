@@ -62,17 +62,45 @@ let casob = condiciones ("b");
 let casoc = condiciones ("c");
 let casod = condiciones ("d");
 
-//Función que entrega mensajes sobre el primer escenario de la simulación, mediante DOM//
-
+//Función que entrega la respuesta el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(vivienda){
     fetch(url)
     .then(respuesta => respuesta.json())
-    .then(data=> console.log(data))
-    .catch(console.log(Error));
+    .then(data=>
+        {
+        const datosTasas= data.tasas;
+        const datosAnios= data.anios;
         if(vivienda!=0){
             Swal.fire({
                 title: '¡Genial!',
-                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoa)))} pesos. \nDuración crédito: ${anios[3]} años. \n Tasa interés: ${tasainteres(tasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoa))),anios[3])} pesos.`,
+                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casoa)))} pesos. \nDuración crédito: ${datosAnios[3]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casoa))),datosAnios[3])} pesos.`,
+                icon: 'success',
+                confirmButtonText: '¡Entendido!',
+            })
+        }else{
+            Swal.fire({
+                title: '¡Error!',
+                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+                icon: 'error',
+                confirmButtonText: 'Entiendo',
+            })
+        }   
+        }
+    )
+}
+
+//Función con la respuesta del segundo escenario, mediante DOM//
+function respuestaSimuladorb(vivienda){
+    fetch(url)
+    .then(respuesta => respuesta.json())
+    .then(data=>
+        {
+        const datosTasas= data.tasas;
+        const datosAnios= data.anios;        
+        if(vivienda!=0){
+            Swal.fire({
+                title: '¡Genial!',
+                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casob))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casob)))} pesos. \nDuración crédito: ${datosAnios[2]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casob))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casob))),datosAnios[2])} pesos.`,
                 icon: 'success',
                 confirmButtonText: '¡Entendido!',
             })
@@ -85,64 +113,61 @@ function respuestaSimuladora(vivienda){
             })
         }
         }
-//Función con la respuesta del segundo escenario, mediante DOM//
-function respuestaSimuladorb(vivienda){
-    fetch(url)
-    if(vivienda!=0){
-        Swal.fire({
-            title: '¡Genial!',
-            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casob))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casob)))} pesos. \nDuración crédito: ${anios[2]} años. \n Tasa interés: ${tasainteres(tasas.find(casob))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casob))),anios[2])} pesos.`,
-            icon: 'success',
-            confirmButtonText: '¡Entendido!',
-        })
-    }else{
-        Swal.fire({
-            title: '¡Error!',
-            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-            icon: 'error',
-            confirmButtonText: 'Entiendo',
-        })
-    }
+    )
 }
 
 //Función con la respuesta del tercer escenario, mediante DOM//
 function respuestaSimuladorc(vivienda){
     fetch(url)
-    if(vivienda!=0){
-        Swal.fire({
-            title: '¡Genial!',
-            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casoc))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casoc)))} pesos. \nDuración crédito: ${anios[1]} años. \n Tasa interés: ${tasainteres(tasas.find(casoc))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casoc))),anios[1])} pesos.`,
-            icon: 'success',
-            confirmButtonText: '¡Entendido!',
-        }) 
-    }else{
-        Swal.fire({
-            title: '¡Error!',
-            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-            icon: 'error',
-            confirmButtonText: 'Entiendo',
-        })
-    }
+    .then(respuesta => respuesta.json())
+    .then(data=>    
+        {
+        const datosTasas= data.tasas;
+        const datosAnios= data.anios;
+        if(vivienda!=0){
+            Swal.fire({
+                title: '¡Genial!',
+                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casoc))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casoc)))} pesos. \nDuración crédito: ${datosAnios[1]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casoc))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casoc))),datosAnios[1])} pesos.`,
+                icon: 'success',
+                confirmButtonText: '¡Entendido!',
+            }) 
+        }else{
+            Swal.fire({
+                title: '¡Error!',
+                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+                icon: 'error',
+                confirmButtonText: 'Entiendo',
+            })
+        }
+        }
+    )
 }
 
 //Función con la respuesta del cuarto escenario, mediante DOM//
 function respuestaSimuladord(vivienda){
     fetch(url)
-    if(vivienda!=0){
-        Swal.fire({
-            title: '¡Genial!',
-            text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,tasas.find(casod))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,tasas.find(casod)))} pesos. \nDuración crédito: ${anios[0]} años. \n Tasa interés: ${tasainteres(tasas.find(casod))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,tasas.find(casod))),anios[0])} pesos.`,
-            icon: 'success',
-            confirmButtonText: '¡Entendido!',
-        })
-    }else{
+    .then(respuesta => respuesta.json())
+    .then(data=>  
+        {
+        const datosTasas= data.tasas;
+        const datosAnios= data.anios;        
+        if(vivienda!=0){
+            Swal.fire({
+                title: '¡Genial!',
+                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casod))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casod)))} pesos. \nDuración crédito: ${datosAnios[0]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casod))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casod))),datosAnios[0])} pesos.`,
+                icon: 'success',
+                confirmButtonText: '¡Entendido!',
+            })
+        }else{
         Swal.fire({
             title: '¡Error!',
             text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
             icon: 'error',
             confirmButtonText: 'Entiendo',
         })
-    }
+        }
+        }
+    )
 }
 
 //Función con la respuesta de rechazo, mediante DOM//
