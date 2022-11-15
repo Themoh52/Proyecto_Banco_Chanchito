@@ -22,7 +22,7 @@ let conversion = operar("Conversion");
 let cuotamensual = operar("CuotaMensual");
 let tasainteres = operar("TasaInteres");
 
-//Función para aplicar el método de array's "Find"//
+//Función para aplicar el método de array's "find"//
 function condiciones(condicion){
     if(condicion=="a"){
         return (a)=> a>=(5/100)
@@ -34,11 +34,37 @@ function condiciones(condicion){
     return (a)=> a>=(5.7/100) 
 }
 
-//Control de submit, mediante Event//
+//Variables con las condiciones creadas para aplicar el método de de array's "find"//
+let casoa = condiciones ("a");
+let casob = condiciones ("b");
+let casoc = condiciones ("c");
+let casod = condiciones ("d");
+
+//Función que entrega la respuesta positiva al usuario//
+function Positiva(vivienda,datosTasas,datosAnios){
+    Swal.fire({
+        title: '¡Genial!',
+        text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas)} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas))} pesos. \nDuración crédito: ${datosAnios} años. \n Tasa interés: ${tasainteres(datosTasas)}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas)),datosAnios)} pesos.`,
+        icon: 'success',
+        confirmButtonText: '¡Entendido!',
+    })  
+}
+
+//Función que contiene la respuesta negativa al usuario//
+ function negativo(){
+ Swal.fire({
+    title: '¡Error!',
+    text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
+    icon: 'error',
+    confirmButtonText: 'Entiendo',
+})}
+
+
+//Control del submit, mediante Events//
 let formulario = document.getElementById("form");
 formulario.addEventListener("submit", credito);
 
-//Función con el simulador del crédito, separado por rangos del valor del pie de la  vivienda//
+//Función con el simulador del crédito, separado por rangos del valor del pie de la vivienda//
 function credito(e){
     e.preventDefault();
     let vivienda = parseInt(document.getElementById("vivienda").value);
@@ -56,12 +82,6 @@ function credito(e){
     }
 }
 
-//Variables con las condiciones creadas//
-let casoa = condiciones ("a");
-let casob = condiciones ("b");
-let casoc = condiciones ("c");
-let casod = condiciones ("d");
-
 //Función que entrega la respuesta el primer escenario de la simulación, mediante DOM//
 function respuestaSimuladora(vivienda){
     fetch(url)
@@ -70,21 +90,7 @@ function respuestaSimuladora(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;
-        if(vivienda!=0){
-            Swal.fire({
-                title: '¡Genial!',
-                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casoa))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casoa)))} pesos. \nDuración crédito: ${datosAnios[3]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casoa))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casoa))),datosAnios[3])} pesos.`,
-                icon: 'success',
-                confirmButtonText: '¡Entendido!',
-            })
-        }else{
-            Swal.fire({
-                title: '¡Error!',
-                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-                icon: 'error',
-                confirmButtonText: 'Entiendo',
-            })
-        }   
+        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casoa),datosAnios[3]) : negativo()    
         }
     )
 }
@@ -97,21 +103,7 @@ function respuestaSimuladorb(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;        
-        if(vivienda!=0){
-            Swal.fire({
-                title: '¡Genial!',
-                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casob))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casob)))} pesos. \nDuración crédito: ${datosAnios[2]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casob))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casob))),datosAnios[2])} pesos.`,
-                icon: 'success',
-                confirmButtonText: '¡Entendido!',
-            })
-        }else{
-            Swal.fire({
-                title: '¡Error!',
-                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-                icon: 'error',
-                confirmButtonText: 'Entiendo',
-            })
-        }
+        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casob),datosAnios[2]) : negativo()
         }
     )
 }
@@ -124,21 +116,7 @@ function respuestaSimuladorc(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;
-        if(vivienda!=0){
-            Swal.fire({
-                title: '¡Genial!',
-                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casoc))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casoc)))} pesos. \nDuración crédito: ${datosAnios[1]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casoc))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casoc))),datosAnios[1])} pesos.`,
-                icon: 'success',
-                confirmButtonText: '¡Entendido!',
-            }) 
-        }else{
-            Swal.fire({
-                title: '¡Error!',
-                text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-                icon: 'error',
-                confirmButtonText: 'Entiendo',
-            })
-        }
+        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casoc),datosAnios[1]) : negativo()
         }
     )
 }
@@ -151,21 +129,7 @@ function respuestaSimuladord(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;        
-        if(vivienda!=0){
-            Swal.fire({
-                title: '¡Genial!',
-                text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas.find(casod))} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas.find(casod)))} pesos. \nDuración crédito: ${datosAnios[0]} años. \n Tasa interés: ${tasainteres(datosTasas.find(casod))}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas.find(casod))),datosAnios[0])} pesos.`,
-                icon: 'success',
-                confirmButtonText: '¡Entendido!',
-            })
-        }else{
-        Swal.fire({
-            title: '¡Error!',
-            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-            icon: 'error',
-            confirmButtonText: 'Entiendo',
-        })
-        }
+        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casod),datosAnios[0]) : negativo()
         }
     )
 }
@@ -178,13 +142,6 @@ function respuestaSimuladore(vivienda){
             text: `Pero si el valor de tu pie no es mayor al 20% del valor de la vivienda, no puedes 
             contrar un crédito hipotecario con nosotros.`,
             icon: 'warning',
-            confirmButtonText: 'Entiendo',
-        })
-    }else{
-        Swal.fire({
-            title: '¡Error!',
-            text: `Si no ingresas valores mayores a 0, no puedes comenzar la simulación.`,
-            icon: 'error',
             confirmButtonText: 'Entiendo',
         })
     }

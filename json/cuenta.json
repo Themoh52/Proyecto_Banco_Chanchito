@@ -4,31 +4,31 @@
             "numero_cuenta": 1,
             "nombre":"Martín Olate",
             "correo":"martin.olate@gmail.com",
-            "contraseña":"Mati552,."
+            "pass": "Mati552,."
         },
         {
             "numero_cuenta": 2,
             "nombre": "Sara García de Cortázar",
             "correo": "sari.oshita@gmail.com",
-            "contraseña": "Oshita52."
+            "pass": "Oshita52."
         },
         {
             "numero_cuenta": 3,
             "nombre": "Ricardo Olate",
             "correo": "cocho_52@gmail.com",
-            "contraseña": "Cochi52,."
+            "pass": "Cochi52,."
         },
         {
             "numero_cuenta": 4,
             "nombre": "Natalia García",
             "correo": "popo&atenea@gmail.com",
-            "contraseña": "CarCu52,."
+            "pass": "CarCu52,."
         },
         {
             "numero_cuenta": 5,
             "nombre": "Benjamín Vielma",
             "correo": "benjitav@gmail.com",
-            "contraseña": "Medoc52,."
+            "pass": "Medoc52,."
         }
     ]
 }
