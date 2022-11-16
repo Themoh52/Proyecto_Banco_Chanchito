@@ -12,21 +12,23 @@
 <body>
     <header class="header">
     <nav class="header-nav">
-        <a href="../index.html"><img src="../images/" alt="Logotipo Banco Chanchito"></a>
+        <a href="../index.html"><img src="../images/chancho_alcancia_1.jpg" class="header-nav__logo" alt="Logotipo Banco Chanchito"></a>
+        <a href="../pages/cuenta_ahorro.html">Cuenta de Ahorro</a>        
         <a href="../pages/ingresa_aqui.html">Ingresa Aquí</a>
-        <a href="../pages/cuenta_ahorro.html">Cuenta de Ahorro</a>
     </nav>
     </header>
-    <main id="credito_main">
-        <h1>Simula tu Crédito Hipotecario Aquí</h1>
-        <form action="" method="get" enctype="application/x-www-form-urlencoded" id = "form">
-            <label for="Vivienda">Ingresa el valor de la vivienda en UF</label>
-            <input type="number" name="Vivienda"  id="vivienda" required>
-            <label for="Pie">Ingresa el Valor del pie en UF</label>
-            <input type="number" name="Pie" id ="pie" required>
-            <input type="submit" value="Simula tu crédito" id="btn-simular">
-            <input type="reset" value="Reinicia la simulación" id="btn-reinicio">
-        </form>
+    <main id="credito-hipotecario-main">
+        <section id="credito-hipotecario-main-section__formulario">
+            <h1>Simula tu Crédito Hipotecario Aquí</h1>
+            <form action="" method="get" enctype="application/x-www-form-urlencoded" id = "form">
+                <label for="Vivienda">Ingresa el valor de la vivienda en UF</label>
+                <input type="number" name="Vivienda"  id="vivienda" required>
+                <label for="Pie">Ingresa el Valor del pie en UF</label>
+                <input type="number" name="Pie" id ="pie" required>
+                <input type="submit" value="Simula tu crédito" id="btn-simular">
+                <input type="reset" value="Reinicia la simulación" id="btn-reinicio">
+            </form>
+        </section>
     </main>
     <footer class="footer">
     </footer>

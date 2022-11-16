@@ -1,0 +1,172 @@
+$parrafo: 'Inika', serif;
+@media(max-width: 1024px){
+    p{
+        margin: 0 0 50px 0;
+        font-family: $parrafo;
+        font-size: 35px;
+        text-align:justify;
+        color: #00ff55;
+    }
+    .header-nav{
+        width: 100vw;
+        margin: 0 0 50px 0;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: space-between;
+        align-items: center;
+    }
+    #main-index{
+        margin: 0 0 50px 25px;
+        padding: 0;
+        display: flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap: 10px;
+    }
+}
+@media(max-width: 500px){
+    h1{
+        width: 50vw;
+        font-family: $parrafo;
+        font-size: 25px;
+        margin: 0 0 50px 10px;
+        padding: 0;
+        color: #f0f9ff;
+        background-color: black;   
+    }
+    h2{
+        width: 50vw;
+        font-family: $parrafo;
+        font-size: 20px;
+        margin: 0 0 50px 0;
+        padding: 0;
+        color: #ffb133;
+        background-color: black;
+    }
+    h3{
+        font-family: $parrafo;
+        font-size: 15px;
+        margin: 0 0 50px 0;
+        color: #a9ff1f;
+        background-color: black;
+    }
+    p{
+        margin: 0 0 50px 0;
+        padding: 0;
+        font-family: $parrafo;
+        font-size: 15px;
+        text-align:justify;
+        color: #00ff55;
+        background-color: black;
+    }
+    a{
+        font-family: $parrafo;
+        font-size: 15px;
+        color: rgb(1, 202, 247);
+        text-decoration: none;
+        margin: 0 0 25px 0;
+        transition: all .5s;
+            &:hover{
+                background-color: black;
+                color: white;
+            }
+    }
+    li{
+        margin: 0 0 25px 0;
+        padding-left: 10px;
+        font-family: $parrafo;
+        font-size: 15px;
+        text-align:justify;
+        color: #00ff91; 
+    }
+    .header-nav{
+        width: 100vw;
+        height: 30vh;
+        margin: 0 0 25px 0;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+        row-gap: 5px;
+            &__menu{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                &__a{
+                    font-family: $parrafo;
+                    font-size: 15px;
+                    color: #f0f9ff;
+                    background-color: #2bb224;
+                    text-decoration: none;
+                    margin: 0 0 50px 0;
+                }
+            }
+
+    }
+    #index-main{
+        margin: 0 0 50px 0;
+        padding-left: 10px;
+        display: flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+    .footer{
+        width: 100vw;
+        height: 20vh;
+        padding-left:10px;
+        background-color: #2bb224;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        &-a{
+            font-family: $parrafo;
+            font-size: 15px;
+            color: white;
+            text-decoration: none;
+            margin: 0 0 10px 0;
+        }
+    }
+    $formulario:(
+    color:#a9ff1f,
+    texto: $parrafo,
+    ttexto: 15px,
+    fondo: black,
+    );
+
+    $botones: (
+        enviar: #4bda34,
+        borrar: #d38327,
+        texto: $parrafo,
+        ttexto: 15px,
+    );
+    #form{
+        width: 75vw;
+        padding: 0;
+        display: flex;
+        flex-direction:column;
+        flex-wrap:wrap;
+        gap: 10px;
+        font-family: map-get($formulario, texto);
+        font-size: map-get($formulario, ttexto);
+        text-align: justify;
+        color: map-get($formulario, color);
+        background-color: map-get($formulario, fondo);
+        &-btn-enviar{
+            background-color: map-get($botones, enviar);
+            font-family: map-get($botones, texto);
+            font-size: map-get($botones, ttexto);
+        }
+        &-btn-borrar{
+            background-color: map-get($botones, borrar);
+            font-family: map-get($botones, texto);
+            font-size: map-get($botones, ttexto);
+        }
+}
+}

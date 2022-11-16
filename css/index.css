@@ -77,6 +77,7 @@ li {
 
 #form {
   width: 50vw;
+  margin: 0 0 50px 10px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -109,9 +110,10 @@ li {
     justify-content: space-between;
     align-items: center; }
     .header-nav__logo {
-      height: 100px;
-      width: 100px;
-      margin: 0; }
+      width: 180px;
+      height: 200px;
+      margin: 0;
+      padding: 0; }
     .header-nav__a {
       padding: 5px;
       background-color: rgba(255, 255, 255, 0); }
@@ -163,62 +165,170 @@ li {
     grid-area: index-main-section__ahorro;
     animation: index-section__ahorro 3s ease-in-out both; }
 
-.ingresa-aqui-main {
+#ingresa-aqui-main {
   margin: 0 0 50px 0;
   display: grid;
-  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
-  grid-template-rows: repeat(2, 2fr);
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-areas: "... ingresa-aqui-main-section__formulario ..." "... ingresa-aqui-main-section__formulario ..." "... ingresa-ingresa-main-section__formulario ...";
+  grid-template-rows: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   gap: 20px; }
-  .ingresa-aqui-main-section__about-us {
-    grid-area: index-main-section__about-us;
-    animation: index-section__about-us 1s ease-in-out both; }
-  .ingresa-aqui-main-section__areas {
-    grid-area: index-main-section__areas;
-    animation: index-section__areas 2s ease-in-out both; }
-  .ingresa-aqui-main-section__practica {
-    grid-area: index-main-section__practica;
-    animation: index-section__practica 3s ease-in-out both; }
-  .ingresa-aqui-main-section__work {
-    grid-area: index-main-section__work;
-    animation: index-section__work 4s ease-in-out both; }
+  #ingresa-aqui-main-section__formulario {
+    grid-area: ingresa-aqui-main-section__formulario; }
 
-.credito-hipotecario-main {
+#credito-hipotecario-main {
   margin: 0 0 50px 0;
   display: grid;
-  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
-  grid-template-rows: repeat(2, 2fr);
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-areas: "... credito-hipotecario-main-section__formulario ..." "... credito-hipotecario-main-section__formulario ..." "... credito-hipotecario-main-section__formulario ...";
+  grid-template-rows: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   gap: 20px; }
-  .credito-hipotecario-main-section__about-us {
-    grid-area: index-main-section__about-us;
-    animation: index-section__about-us 1s ease-in-out both; }
-  .credito-hipotecario-main-section__areas {
-    grid-area: index-main-section__areas;
-    animation: index-section__areas 2s ease-in-out both; }
-  .credito-hipotecario-main-section__practica {
-    grid-area: index-main-section__practica;
-    animation: index-section__practica 3s ease-in-out both; }
-  .credito-hipotecario-main-section__work {
-    grid-area: index-main-section__work;
-    animation: index-section__work 4s ease-in-out both; }
+  #credito-hipotecario-main-section__formulario {
+    grid-area: credito-hipotecario-main-section__formulario; }
 
-.cuenta-ahorro-main {
+#cuenta-ahorro-main {
   margin: 0 0 50px 0;
   display: grid;
-  grid-template-areas: "index-main-section__about-us index-main-section__areas" " index-main-section__practica index-main-section__work";
-  grid-template-rows: repeat(2, 2fr);
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-areas: ". cuenta-ahorro-main-section__formulario ." ". cuenta-ahorro-main-section__formulario ." ". cuenta-ahorro-main-section__formulario .";
+  grid-template-rows: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   gap: 20px; }
-  .cuenta-ahorro-main-section__about-us {
-    grid-area: index-main-section__about-us;
-    animation: index-section__about-us 1s ease-in-out both; }
-  .cuenta-ahorro-main-section__areas {
-    grid-area: index-main-section__areas;
-    animation: index-section__areas 2s ease-in-out both; }
-  .cuenta-ahorro-main-section__practica {
-    grid-area: index-main-section__practica;
-    animation: index-section__practica 3s ease-in-out both; }
-  .cuenta-ahorro-main-section__work {
-    grid-area: index-main-section__work;
-    animation: index-section__work 4s ease-in-out both; }
+  #cuenta-ahorro-main-section__formulario {
+    grid-area: cuenta-ahorro-main-section__formulario; }
+
+@media (max-width: 1024px) {
+  p {
+    margin: 0 0 50px 0;
+    font-family: "Inika", serif;
+    font-size: 35px;
+    text-align: justify;
+    color: #00ff55; }
+  .header-nav {
+    width: 100vw;
+    margin: 0 0 50px 0;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-between;
+    align-items: center; }
+  #main-index {
+    margin: 0 0 50px 25px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px; } }
+
+@media (max-width: 500px) {
+  h1 {
+    width: 50vw;
+    font-family: "Inika", serif;
+    font-size: 25px;
+    margin: 0 0 50px 10px;
+    padding: 0;
+    color: #f0f9ff;
+    background-color: black; }
+  h2 {
+    width: 50vw;
+    font-family: "Inika", serif;
+    font-size: 20px;
+    margin: 0 0 50px 0;
+    padding: 0;
+    color: #ffb133;
+    background-color: black; }
+  h3 {
+    font-family: "Inika", serif;
+    font-size: 15px;
+    margin: 0 0 50px 0;
+    color: #a9ff1f;
+    background-color: black; }
+  p {
+    margin: 0 0 50px 0;
+    padding: 0;
+    font-family: "Inika", serif;
+    font-size: 15px;
+    text-align: justify;
+    color: #00ff55;
+    background-color: black; }
+  a {
+    font-family: "Inika", serif;
+    font-size: 15px;
+    color: #01caf7;
+    text-decoration: none;
+    margin: 0 0 25px 0;
+    transition: all .5s; }
+    a:hover {
+      background-color: black;
+      color: white; }
+  li {
+    margin: 0 0 25px 0;
+    padding-left: 10px;
+    font-family: "Inika", serif;
+    font-size: 15px;
+    text-align: justify;
+    color: #00ff91; }
+  .header-nav {
+    width: 100vw;
+    height: 30vh;
+    margin: 0 0 25px 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px; }
+    .header-nav__menu {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style: none; }
+      .header-nav__menu__a {
+        font-family: "Inika", serif;
+        font-size: 15px;
+        color: #f0f9ff;
+        background-color: #2bb224;
+        text-decoration: none;
+        margin: 0 0 50px 0; }
+  #index-main {
+    margin: 0 0 50px 0;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px; }
+  .footer {
+    width: 100vw;
+    height: 20vh;
+    padding-left: 10px;
+    background-color: #2bb224;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around; }
+    .footer-a {
+      font-family: "Inika", serif;
+      font-size: 15px;
+      color: white;
+      text-decoration: none;
+      margin: 0 0 10px 0; }
+  #form {
+    width: 75vw;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: "Inika", serif;
+    font-size: 15px;
+    text-align: justify;
+    color: #a9ff1f;
+    background-color: black; }
+    #form-btn-enviar {
+      background-color: #4bda34;
+      font-family: "Inika", serif;
+      font-size: 15px; }
+    #form-btn-borrar {
+      background-color: #d38327;
+      font-family: "Inika", serif;
+      font-size: 15px; } }
