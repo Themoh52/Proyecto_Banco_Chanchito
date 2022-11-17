@@ -30,10 +30,26 @@ function iniciarSesion(e){
 function respuestasesiona(usuario,pass){
     Swal.fire({
         title: '¡Excelente!',
-        text: `¡¡Bienvenido!! , ahora puedes simular y solicitar créditos hipotecarios o simular y abrir una cuenta de ahorro con nosotros`,
+        text: `¡¡Bienvenido(a)!! , ahora puedes simular y solicitar créditos hipotecarios o simular y abrir una cuenta de ahorro con nosotros`,
         icon: 'success',
         confirmButtonText: '¡Entendido!',
-    })
+    }).then((result)=> {
+        if(result.isConfirmed) {
+            Toastify({
+                text: "Clikeame...¡¡O MORIRE!! (Cuenta de Ahorro)",
+                duration: 5000,
+                gravity:"botton",
+                destination: '../pages/credito_hipotecario.html'
+            }).showToast();
+            Toastify({
+                text: "Clikeame...¡¡O MORIRE!! (Crédito Hipotecario)",
+                duration: 5000,
+                gravity:"botton",    
+                destination: '../pages/cuenta_ahorro.html'
+            }).showToast();    
+            }
+        }
+    )
 }
 //Respuesta de correo o contraseña incorrecta//
 function respuestasesionb(usuario,pass){

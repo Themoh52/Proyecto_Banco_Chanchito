@@ -41,13 +41,35 @@ let casoc = condiciones ("c");
 let casod = condiciones ("d");
 
 //Función que entrega la respuesta positiva al usuario//
-function Positiva(vivienda,datosTasas,datosAnios){
+function positivo(vivienda,datosTasas,datosAnios){
     Swal.fire({
         title: '¡Genial!',
-        text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${creditototal(vivienda,datosTasas)} Uf. \nValor crédito en pesos: ${conversion(creditototal(vivienda,datosTasas))} pesos. \nDuración crédito: ${datosAnios} años. \n Tasa interés: ${tasainteres(datosTasas)}% \nValor cuota mensual: ${cuotamensual(conversion(creditototal(vivienda,datosTasas)),datosAnios)} pesos.`,
+        text: `Estos son los detalles del crédito hipotecario: \nValor crédito: ${Math.round(creditototal(vivienda,datosTasas))} Uf. \nValor crédito en pesos: ${Math.round(conversion(creditototal(vivienda,datosTasas)))} pesos. \nDuración crédito: ${datosAnios} años. \n Tasa interés: ${tasainteres(datosTasas)}% \nValor cuota mensual: ${Math.round(cuotamensual(conversion(creditototal(vivienda,datosTasas)),datosAnios))} pesos.`,
         icon: 'success',
-        confirmButtonText: '¡Entendido!',
-    })  
+        confirmButtonText: '¡Entendido!'
+    }).then((result)=> {
+            if(result.isConfirmed) {
+                Swal.fire({
+                    title: 'Ahora,',
+                    text: "Este es el crédito hipotecario que ofrecemos. ¿Deseas contratarlo o realizar otra simulación?",
+                    icon: 'info',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Contratar crédito',
+                    cancelButtonText: 'Realizar otra simuación'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire({
+                        title: '¡Bien!',
+                        text: 'Para eso, primero debes iniciar sesión en tu cuenta',
+                        confirmButtonText: '<a href="../pages/ingresa_aqui.html">Ingresa aquí</a>'
+                      })
+                    }
+                  })
+                }
+            }
+        )
 }
 
 //Función que contiene la respuesta negativa al usuario//
@@ -90,7 +112,7 @@ function respuestaSimuladora(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;
-        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casoa),datosAnios[3]) : negativo()    
+        vivienda!=0 ? positivo(vivienda,datosTasas.find(casoa),datosAnios[3]) : negativo()    
         }
     )
 }
@@ -103,7 +125,7 @@ function respuestaSimuladorb(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;        
-        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casob),datosAnios[2]) : negativo()
+        vivienda!=0 ? positivo(vivienda,datosTasas.find(casob),datosAnios[2]) : negativo()
         }
     )
 }
@@ -116,7 +138,7 @@ function respuestaSimuladorc(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;
-        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casoc),datosAnios[1]) : negativo()
+        vivienda!=0 ? positivo(vivienda,datosTasas.find(casoc),datosAnios[1]) : negativo()
         }
     )
 }
@@ -129,7 +151,7 @@ function respuestaSimuladord(vivienda){
         {
         const datosTasas= data.tasas;
         const datosAnios= data.anios;        
-        vivienda!=0 ? Positiva(vivienda,datosTasas.find(casod),datosAnios[0]) : negativo()
+        vivienda!=0 ? positivo(vivienda,datosTasas.find(casod),datosAnios[0]) : negativo()
         }
     )
 }

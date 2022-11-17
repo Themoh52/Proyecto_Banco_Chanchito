@@ -40,7 +40,29 @@ function positivo(sueldo,datosTasas){
         text: `Estos son los detalles de la cuenta de ahorro que te ofrecemos: \nTasa de interés: ${tasainteres(datosTasas)}%. \nValor incremento mensual: ${incremento(sueldo,datosTasas)} pesos.`,
         icon: 'success',
         confirmButtonText: '¡Entendido!',
-    })
+    }).then((result)=> {
+        if(result.isConfirmed) {
+            Swal.fire({
+                title: 'Ahora,',
+                text: "Esta es la cuenta de ahorro que ofrecemos. ¿Deseas abrir una o realizar otra simulación?",
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Abrir cuenta',
+                cancelButtonText: 'Realizar otra simuación'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: '¡Bien!',
+                    text: 'Para eso, primero debes iniciar sesión en tu cuenta',
+                    confirmButtonText: '<a href="../pages/ingresa_aqui.html">Ingresa aquí</a>'
+                  })
+                }
+              })
+            }
+        }
+    )
 }
 
 //Función que contiene la parte negativa de la respuesta del simulador
